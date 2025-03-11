@@ -9,4 +9,8 @@ test("frame", async ({page}) => {
     await myFrame?.fill("input[name='lname']","Last Name")
     expect(await myFrame?.locator("p.title.has-text-info").textContent()).toContain("You have entered")
 
+    const innerframe = myFrame?.frameLocator('iframe[src=innerframe]')
+    await innerframe?.locator('input[name=email]').fill('this email')
+
+    await myFrame?.fill("input[name='lname']","override Last Name")
 })
