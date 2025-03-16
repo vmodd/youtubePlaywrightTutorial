@@ -6,8 +6,10 @@ test("window opening test", async ({page}) => {
 
       const [newWindow] = await Promise.all([
         page.waitForEvent("popup"),
-        page.getByText("Follow On Twitter").click()
-         ]);
+            page.getByText("Follow On Twitter").click()
+           
+          
+        ]);
        console.log(newWindow.url());
 
 })
